@@ -1,0 +1,37 @@
+一次完整的修改、提交、推送操作
+首先，进入仓库主目录，执行git status, 查看整个仓库的状态
+使用git add . 命令全部添加到暂存区。
+暂存区记录的只是修改。如果要撤销，执行git reset -- [文件名] 或者git rm --cached [文件名]
+git diff可以查看工作区被跟踪的文件的修改详情。
+git diff --cached 查看暂存区的全部修改。
+git commit把暂存区的修改提交到版本区
+git log查看版本区的提交历史记录。
+git log reverse 时间正序显示
+git log [分支名]
+git log --oneline 一行显示提交历史
+git log -n 查看最近的n个提交
+git log --author [贡献者名字] 查看指定贡献者的提交记录
+git log --graph 图示法显示提交历史
+git commit生成新提交， 必须的选项 -m 用来提供该提交的备注。
+git branch -avv，它用来查看全部分支信息
+git push 将本地新增的提交推送到 GitHub 远程仓库中
+git push -f 强制推送隔代版本
+
+执行 git reset --soft HEAD^ 撤销最近的一次提交，将修改还原到暂存区。
+--soft 表示软退回，对应的还有 --hard 硬退回，后面会讲到，HEAD^ 表示撤销一次提交，
+HEAD^^ 表示撤销两次提交，撤销 n 次可以简写为 HEAD~n。
+软退回一个提交后执行 git branch -avv 命令查看分支信息
+
+执行 git reset --soft HEAD^ 撤销最近的一次提交，将修改还原到暂存区。
+--soft 表示软退回，对应的还有 --hard 硬退回，后面会讲到，HEAD^ 表示撤销一次提交，
+HEAD^^ 表示撤销两次提交，撤销 n 次可以简写为 HEAD~n。
+软退回一个提交后执行 git branch -avv 命令查看分支信息
+
+在 Linux 中使用 vim 时，输入 vim xxx.file 输入好文件内容之后，怎么保存呢？
+按 ESC，左下角就可以进行输入
+:w 保存但不退出
+:wq 保存并退出
+:q 退出
+:q! 强制退出，不保存
+:e! 放弃所有修改，从上次保存文件开始再编辑命令历史
+
